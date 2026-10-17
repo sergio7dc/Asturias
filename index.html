@@ -15,9 +15,11 @@
       --text-muted: #6B5E55;
       --accent: #C86D51;
       --accent-soft: #F4ECE1;
+      --accent-hover: #B55A40;
       --border: #E8DFD5;
       --radius: 16px;
       --shadow: 0 10px 30px rgba(45, 36, 30, 0.05);
+      --shadow-hover: 0 15px 35px rgba(45, 36, 30, 0.1);
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -55,7 +57,7 @@
 
     h1 {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 2.5rem;
+      font-size: 2.6rem;
       color: var(--text-main);
       line-height: 1.2;
       margin-bottom: 12px;
@@ -70,15 +72,21 @@
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 12px;
-      margin-bottom: 32px;
+      margin-bottom: 40px;
     }
 
     .info-card {
       background: var(--card-bg);
-      padding: 18px;
+      padding: 20px;
       border-radius: var(--radius);
       border: 1px solid var(--border);
       box-shadow: var(--shadow);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .info-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-hover);
     }
 
     .info-card label {
@@ -99,16 +107,19 @@
 
     .section-title {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1.8rem;
-      margin: 36px 0 16px;
+      font-size: 2rem;
+      margin: 40px 0 20px;
       color: var(--text-main);
+      border-bottom: 2px solid var(--accent-soft);
+      padding-bottom: 8px;
+      display: inline-block;
     }
 
     .gallery-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
-      margin-bottom: 32px;
+      gap: 16px;
+      margin-bottom: 40px;
     }
 
     .photo-card {
@@ -117,27 +128,34 @@
       border: 1px solid var(--border);
       overflow: hidden;
       box-shadow: var(--shadow);
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+
+    .photo-card:hover {
+      transform: scale(1.02);
     }
 
     .photo-card img {
       width: 100%;
-      height: 160px;
+      height: 180px;
       object-fit: cover;
       display: block;
     }
 
     .photo-caption {
-      padding: 10px 12px;
-      font-size: 0.85rem;
+      padding: 12px;
+      font-size: 0.9rem;
       font-weight: 600;
       color: var(--text-main);
       text-align: center;
+      background-color: var(--card-bg);
     }
 
     .itinerary {
       display: flex;
       flex-direction: column;
-      gap: 16px;
+      gap: 20px;
     }
 
     .day-card {
@@ -146,27 +164,36 @@
       border-radius: var(--radius);
       border: 1px solid var(--border);
       box-shadow: var(--shadow);
+      transition: transform 0.3s ease, border-color 0.3s ease;
+    }
+
+    .day-card:hover {
+      transform: translateX(5px);
+      border-color: var(--accent);
     }
 
     .day-header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 12px;
-      padding-bottom: 10px;
+      margin-bottom: 16px;
+      padding-bottom: 12px;
       border-bottom: 1px solid var(--border);
     }
 
     .day-header h3 {
-      font-size: 1.15rem;
+      font-size: 1.25rem;
       color: var(--accent);
       font-weight: 700;
     }
 
     .day-header .date {
-      font-size: 0.85rem;
+      font-size: 0.9rem;
       color: var(--text-muted);
       font-weight: 600;
+      background-color: var(--accent-soft);
+      padding: 4px 10px;
+      border-radius: 12px;
     }
 
     .day-card ul {
@@ -175,33 +202,37 @@
 
     .day-card li {
       position: relative;
-      padding-left: 20px;
-      margin-bottom: 8px;
-      font-size: 0.95rem;
+      padding-left: 24px;
+      margin-bottom: 10px;
+      font-size: 1rem;
       color: var(--text-muted);
+      line-height: 1.5;
     }
 
     .day-card li::before {
-      content: "•";
+      content: "✦";
       color: var(--accent);
-      font-size: 1.2rem;
+      font-size: 1rem;
       position: absolute;
       left: 0;
-      top: -2px;
+      top: 1px;
     }
 
     footer {
       text-align: center;
-      margin-top: 48px;
-      padding-top: 24px;
+      margin-top: 60px;
+      padding-top: 30px;
       border-top: 1px solid var(--border);
       color: var(--text-muted);
-      font-size: 0.9rem;
+      font-size: 0.95rem;
     }
 
-    @media (max-width: 480px) {
+    @media (max-width: 500px) {
       .summary-grid, .gallery-grid {
         grid-template-columns: 1fr;
+      }
+      .photo-card img {
+        height: 200px;
       }
     }
   </style>
@@ -212,7 +243,7 @@
     <header>
       <span class="badge">Escapada de Otoño</span>
       <h1>Asturias Secreta</h1>
-      <p>Desconexión, naturaleza y chimenea en Ponga</p>
+      <p>Desconexión, naturaleza y chimenea en la montaña</p>
     </header>
 
     <div class="summary-grid">
@@ -226,7 +257,7 @@
       </div>
       <div class="info-card">
         <label>Alojamiento</label>
-        <span>Casa Rural Axtur</span>
+        <span>Casa Independiente</span>
       </div>
       <div class="info-card">
         <label>Plan principal</label>
@@ -234,23 +265,23 @@
       </div>
     </div>
 
-    <h2 class="section-title">La Casa Rural</h2>
+    <h2 class="section-title">Nuestra Casa</h2>
     <div class="gallery-grid">
       <div class="photo-card">
-        <img src="https://wsrv.nl/?url=https://axtur.com/wp-content/uploads/2022/02/IMG_8329.jpg" alt="Jacuzzi y salón de Asturias Secreta">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5ot-zUZNa2BOFq6SvgrRHz0lMX6rHvgmQm8RN5KzOfbjJEd6wdNJHDfhI&s=10" alt="Jacuzzi de Asturias Secreta">
         <div class="photo-caption">Jacuzzi con vistas a la montaña</div>
       </div>
       <div class="photo-card">
-        <img src="https://wsrv.nl/?url=https://axtur.com/wp-content/uploads/2022/02/Casa-rural-asturias-secreta-KOK_8116-1.jpg" alt="Dormitorio abuhardillado">
-        <div class="photo-caption">Dormitorio abuhardillado</div>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYPcawrHC2HKJX1B_NT1tviGmQdUGkyzVfNWvfah32lO5dirkeFzJD5cI&s=10" alt="Interior y salón">
+        <div class="photo-caption">Interior de la casa</div>
       </div>
       <div class="photo-card">
-        <img src="https://wsrv.nl/?url=https://axtur.com/wp-content/uploads/2022/02/Casa-rural-asturias-secreta-KOK_8140.jpg" alt="Fachada y entorno en Cazo">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2LDePbiYHhho8WibixIr0K39CAD7sHH_j2WZ0dkATDpNPeod5JUYi9QSZ&s=10" alt="Salón con chimenea">
+        <div class="photo-caption">Salón con chimenea de leña</div>
+      </div>
+      <div class="photo-card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZnX8VEBt6NiEJbVnr-delLBmKU0m3jRzJf57sAfDaFRYBX-jMRwH9zWsw&s=10" alt="Fachada exterior">
         <div class="photo-caption">Fachada tradicional en Cazo</div>
-      </div>
-      <div class="photo-card">
-        <img src="https://wsrv.nl/?url=https://axtur.com/wp-content/uploads/2022/02/Casa-rural-asturias-secreta-KOK_8093.jpg" alt="Detalle del alojamiento">
-        <div class="photo-caption">Detalle del alojamiento</div>
       </div>
     </div>
 
@@ -275,7 +306,7 @@
         </div>
         <ul>
           <li>Vistas en el Mirador de Les Bedules y colores de otoño en el Bosque de Peloño.</li>
-          <li>Comida de cocina tradicional asturiana (guiso/carne a la brasa).</li>
+          <li>Comida de cocina tradicional asturiana (guiso o carne a la brasa).</li>
           <li>Paseo por Cangas de Onís y compras de productos locales.</li>
           <li>Tarde/noche de chimenea y jacuzzi en la casa.</li>
         </ul>
@@ -307,7 +338,7 @@
     </div>
 
     <footer>
-      <p>Escapada Asturias 2026 • Cazo, Parque Natural de Ponga</p>
+      <p>Escapada a Asturias 2026 • Parque Natural de Ponga</p>
     </footer>
   </div>
 
