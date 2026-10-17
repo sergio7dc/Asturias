@@ -1,277 +1,272 @@
 <!DOCTYPE html>
-<html lang="es" class="scroll-smooth">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Escapada Asturias Secreta - Noviembre 2026</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts: Plus Jakarta Sans -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        autumn: {
-                            50: '#fcfaf7',
-                            100: '#f5efe6',
-                            200: '#e8dcce',
-                            300: '#d4c2ab',
-                            400: '#b89f80',
-                            500: '#9e8160',
-                            600: '#84694b',
-                            700: '#6b533d',
-                            800: '#574332',
-                            900: '#48372a',
-                            950: '#271e16',
-                        },
-                        terracotta: {
-                            DEFAULT: '#c85a32',
-                            light: '#e0734d',
-                            dark: '#9e4222'
-                        }
-                    },
-                    fontFamily: {
-                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: #fcfaf7;
-            color: #48372a;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Escapada Romántica a Asturias - Noviembre 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #FDFBF7;
+      --card-bg: #FFFFFF;
+      --text-main: #2D241E;
+      --text-muted: #6B5E55;
+      --accent: #C86D51;
+      --accent-soft: #F4ECE1;
+      --border: #E8DFD5;
+      --radius: 16px;
+      --shadow: 0 10px 30px rgba(45, 36, 30, 0.05);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--bg);
+      color: var(--text-main);
+      line-height: 1.6;
+      padding: 20px 16px 60px;
+    }
+
+    .container {
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    header {
+      text-align: center;
+      padding: 40px 20px 30px;
+    }
+
+    .badge {
+      display: inline-block;
+      background-color: var(--accent-soft);
+      color: var(--accent);
+      font-size: 0.85rem;
+      font-weight: 700;
+      padding: 6px 16px;
+      border-radius: 20px;
+      margin-bottom: 16px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.5rem;
+      color: var(--text-main);
+      line-height: 1.2;
+      margin-bottom: 12px;
+    }
+
+    header p {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+    }
+
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-bottom: 32px;
+    }
+
+    .info-card {
+      background: var(--card-bg);
+      padding: 18px;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+    }
+
+    .info-card label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: var(--text-muted);
+      display: block;
+      margin-bottom: 4px;
+      font-weight: 600;
+    }
+
+    .info-card span {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.8rem;
+      margin: 36px 0 16px;
+      color: var(--text-main);
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-bottom: 32px;
+    }
+
+    .photo-card {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .photo-card img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .photo-caption {
+      padding: 10px 12px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-main);
+      text-align: center;
+    }
+
+    .itinerary {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .day-card {
+      background: var(--card-bg);
+      padding: 24px;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+    }
+
+    .day-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .day-header h3 {
+      font-size: 1.15rem;
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .day-header .date {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    .day-card ul {
+      list-style: none;
+    }
+
+    .day-card li {
+      position: relative;
+      padding-left: 20px;
+      margin-bottom: 8px;
+      font-size: 0.95rem;
+      color: var(--text-muted);
+    }
+
+    .day-card li::before {
+      content: "•";
+      color: var(--accent);
+      font-size: 1.2rem;
+      position: absolute;
+      left: 0;
+      top: -2px;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 48px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 480px) {
+      .summary-grid, .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
-<body class="bg-autumn-50 text-autumn-900 antialiased selection:bg-terracotta selection:text-white">
+<body>
 
-    <!-- Header / Hero Section -->
-    <header class="relative bg-autumn-900 text-autumn-50 overflow-hidden">
-        <!-- Background decorative gradient overlay -->
-        <div class="absolute inset-0 bg-gradient-to-br from-autumn-950/90 via-autumn-900/80 to-autumn-800/70 z-10"></div>
-        <!-- Background Image fallback placeholder -->
-        <div class="absolute inset-0 bg-cover bg-center opacity-30 mix-blend-overlay" style="background-image: url('https://placehold.co/1920x1080/48372a/e8dcce?text=Asturias+Otonio');"></div>
-
-        <div class="relative z-20 max-w-5xl mx-auto px-6 py-20 md:py-28 text-center flex flex-col items-center">
-            <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs md:text-sm font-medium bg-terracotta/20 text-terracotta-light border border-terracotta/30 mb-6 backdrop-blur-sm">
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
-                Del 6 al 9 de noviembre de 2026
-            </span>
-
-            <h1 class="text-4xl md:text-6xl font-bold tracking-tight text-white mb-4">
-                Escapada Asturias Secreta
-            </h1>
-            
-            <p class="text-lg md:text-xl text-autumn-200 max-w-2xl font-light leading-relaxed mb-8">
-                Un refugio entre montañas, chimenea encendida y jacuzzi privado para desconectar en el corazón de Ponga.
-            </p>
-
-            <div class="flex flex-wrap justify-center gap-4">
-                <a href="#itinerario" class="px-6 py-3 rounded-xl bg-terracotta hover:bg-terracotta-light text-white font-medium transition shadow-lg shadow-terracotta/25">
-                    Ver Itinerario
-                </a>
-                <a href="#galeria" class="px-6 py-3 rounded-xl bg-autumn-800/80 hover:bg-autumn-700 text-autumn-100 border border-autumn-700 font-medium transition backdrop-blur-sm">
-                    Galería de la Casa
-                </a>
-            </div>
-        </div>
+  <div class="container">
+    <header>
+      <span class="badge">Escapada de Otoño</span>
+      <h1>Asturias Secreta</h1>
+      <p>Desconexión, naturaleza y chimenea en Ponga</p>
     </header>
 
-    <!-- Main Content Container -->
-    <main class="max-w-5xl mx-auto px-6 py-12 md:py-16 space-y-16">
+    <div class="summary-grid">
+      <div class="info-card">
+        <label>Fechas</label>
+        <span>6 – 9 Nov (3 Noches)</span>
+      </div>
+      <div class="info-card">
+        <label>Ubicación</label>
+        <span>Cazo, Ponga</span>
+      </div>
+      <div class="info-card">
+        <label>Alojamiento</label>
+        <span>Casa Rural Axtur</span>
+      </div>
+      <div class="info-card">
+        <label>Plan principal</label>
+        <span>Jacuzzi + Chimenea</span>
+      </div>
+    </div>
 
-        <!-- Section: Key Data Summary Cards -->
-        <section class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <!-- Card 1 -->
-            <div class="bg-white p-6 rounded-2xl shadow-sm border border-autumn-200/60 flex items-start gap-4 transition hover:shadow-md">
-                <div class="p-3 bg-autumn-100 text-autumn-700 rounded-xl">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
-                </div>
-                <div>
-                    <p class="text-xs uppercase tracking-wider text-autumn-500 font-semibold mb-1">Alojamiento</p>
-                    <h3 class="text-lg font-bold text-autumn-900">Asturias Secreta</h3>
-                    <p class="text-sm text-autumn-600">Cazo, Parque Natural de Ponga</p>
-                </div>
-            </div>
+    <h2 class="section-title">La Casa Rural</h2>
+    <div class="gallery-grid">
+      <div class="photo-card">
+        <img src="https://axtur.com/wp-content/uploads/2022/02/IMG_8329.jpg" alt="Jacuzzi y salón de Asturias Secreta">
+        <div class="photo-caption">Jacuzzi con vistas a la montaña</div>
+      </div>
+      <div class="photo-card">
+        <img src="https://www.asetur.org/wp-content/smush-webp/33_001_F22.jpg.webp" alt="Chimenea de leña y salón">
+        <div class="photo-caption">Salón con chimenea de leña</div>
+      </div>
+      <div class="photo-card">
+        <img src="https://axtur.com/wp-content/uploads/2022/02/Casa-rural-asturias-secreta-KOK_8116-1.jpg" alt="Dormitorio abuhardillado">
+        <div class="photo-caption">Dormitorio abuhardillado</div>
+      </div>
+      <div class="photo-card">
+        <img src="https://axtur.com/wp-content/uploads/2022/02/Casa-rural-asturias-secreta-KOK_8140.jpg" alt="Fachada y entorno en Cazo">
+        <div class="photo-caption">Fachada tradicional en Cazo</div>
+      </div>
+    </div>
 
-            <!-- Card 2 -->
-            <div class="bg-white p-6 rounded-2xl shadow-sm border border-autumn-200/60 flex items-start gap-4 transition hover:shadow-md">
-                <div class="p-3 bg-autumn-100 text-autumn-700 rounded-xl">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                </div>
-                <div>
-                    <p class="text-xs uppercase tracking-wider text-autumn-500 font-semibold mb-1">Precio Total</p>
-                    <h3 class="text-lg font-bold text-autumn-900">334 €</h3>
-                    <p class="text-sm text-autumn-600">3 noches (Alox. íntegro)</p>
-                </div>
-            </div>
-
-            <!-- Card 3 -->
-            <div class="bg-white p-6 rounded-2xl shadow-sm border border-autumn-200/60 flex items-start gap-4 transition hover:shadow-md">
-                <div class="p-3 bg-autumn-100 text-autumn-700 rounded-xl">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-                </div>
-                <div>
-                    <p class="text-xs uppercase tracking-wider text-autumn-500 font-semibold mb-1">Ambiente</p>
-                    <h3 class="text-lg font-bold text-autumn-900">Romántico & Relax</h3>
-                    <p class="text-sm text-autumn-600">Jacuzzi privado & Chimenea</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Section: Detailed Itinerary -->
-        <section id="itinerario" class="space-y-8">
-            <div class="text-center max-w-xl mx-auto">
-                <h2 class="text-3xl font-bold text-autumn-900 tracking-tight">Itinerario del Viaje</h2>
-                <p class="text-autumn-600 mt-2">Combinando naturaleza, gastronomía local y tardes de desconexión absoluta.</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                
-                <!-- Friday -->
-                <div class="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-autumn-200/60 flex flex-col justify-between">
-                    <div>
-                        <div class="flex items-center justify-between mb-4">
-                            <span class="px-3 py-1 bg-autumn-100 text-autumn-800 text-xs font-semibold rounded-lg uppercase tracking-wider">Viernes, 6 Nov</span>
-                            <span class="text-xs text-autumn-500 font-medium">Llegada</span>
-                        </div>
-                        <h3 class="text-xl font-bold text-autumn-900 mb-3">Viaje nocturno y estreno de chimenea</h3>
-                        <p class="text-autumn-700 text-sm leading-relaxed">
-                            Salida desde Madrid hacia Cazo (Ponga) buscando la tranquilidad del viaje nocturno. Llegada a la casa rural, toma de contacto con el entorno, encender la chimenea y estreno del jacuzzi para quitarse el cansancio con una cena relajada de picoteo.
-                        </p>
-                    </div>
-                    <div class="mt-6 pt-4 border-t border-autumn-100 text-xs text-autumn-500 flex items-center gap-2">
-                        <svg class="w-4 h-4 text-terracotta" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                        <span>Tarde / Noche de descanso</span>
-                    </div>
-                </div>
-
-                <!-- Saturday -->
-                <div class="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-autumn-200/60 flex flex-col justify-between">
-                    <div>
-                        <div class="flex items-center justify-between mb-4">
-                            <span class="px-3 py-1 bg-autumn-100 text-autumn-800 text-xs font-semibold rounded-lg uppercase tracking-wider">Sábado, 7 Nov</span>
-                            <span class="text-xs text-autumn-500 font-medium">Naturaleza & Cangas</span>
-                        </div>
-                        <h3 class="text-xl font-bold text-autumn-900 mb-3">Mirador de Les Bedules y Cangas de Onís</h3>
-                        <p class="text-autumn-700 text-sm leading-relaxed">
-                            Mañana de vistas panorámicas otoñales en el Mirador de Les Bedules y paseo por el Bosque de Peloño. Al mediodía, bajada a comer un buen guiso o carne tradicional. Por la tarde, paseo por Cangas de Onís y sus tiendas locales.
-                        </p>
-                    </div>
-                    <div class="mt-6 pt-4 border-t border-autumn-100 text-xs text-autumn-500 flex items-center gap-2">
-                        <svg class="w-4 h-4 text-terracotta" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                        <span>Día completo (Ruta + Comida + Paseo)</span>
-                    </div>
-                </div>
-
-                <!-- Sunday -->
-                <div class="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-autumn-200/60 flex flex-col justify-between">
-                    <div>
-                        <div class="flex items-center justify-between mb-4">
-                            <span class="px-3 py-1 bg-autumn-100 text-autumn-800 text-xs font-semibold rounded-lg uppercase tracking-wider">Domingo, 8 Nov</span>
-                            <span class="text-xs text-autumn-500 font-medium">Covadonga & Lagos</span>
-                        </div>
-                        <h3 class="text-xl font-bold text-autumn-900 mb-3">Santuario y Lagos de Covadonga</h3>
-                        <p class="text-autumn-700 text-sm leading-relaxed">
-                            Excursión matutina a la Santa Cueva y subida hacia los lagos Enol y Ercina para disfrutar de la alta montaña asturiana sin aglomeraciones. Comida en sidrería local y tarde entera libre para disfrutar sin prisas del jacuzzi y la chimenea.
-                        </p>
-                    </div>
-                    <div class="mt-6 pt-4 border-t border-autumn-100 text-xs text-autumn-500 flex items-center gap-2">
-                        <svg class="w-4 h-4 text-terracotta" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                        <span>Excursión + Tarde de relax</span>
-                    </div>
-                </div>
-
-                <!-- Monday -->
-                <div class="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-autumn-200/60 flex flex-col justify-between">
-                    <div>
-                        <div class="flex items-center justify-between mb-4">
-                            <span class="px-3 py-1 bg-autumn-100 text-autumn-800 text-xs font-semibold rounded-lg uppercase tracking-wider">Lunes, 9 Nov</span>
-                            <span class="text-xs text-autumn-500 font-medium">Regreso</span>
-                        </div>
-                        <h3 class="text-xl font-bold text-autumn-900 mb-3">Despedida y ruta por Riaño</h3>
-                        <p class="text-autumn-700 text-sm leading-relaxed">
-                            Despertar tranquilo, recogida y última comida por la zona antes de iniciar el viaje de vuelta sobre las 16:00 h, cruzando el Desfiladero de los Beyos y el Embalse de Riaño con las últimas luces de la tarde.
-                        </p>
-                    </div>
-                    <div class="mt-6 pt-4 border-t border-autumn-100 text-xs text-autumn-500 flex items-center gap-2">
-                        <svg class="w-4 h-4 text-terracotta" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                        <span>Vuelta por la tarde</span>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- Section: Photo Gallery -->
-        <section id="galeria" class="space-y-8">
-            <div class="text-center max-w-xl mx-auto">
-                <h2 class="text-3xl font-bold text-autumn-900 tracking-tight">Galería de la Casa Rural</h2>
-                <p class="text-autumn-600 mt-2">Un vistazo al ambiente cálido y acogedor que os espera en Asturias Secreta.</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                
-                <!-- Photo Card 1 -->
-                <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-autumn-200/60 group">
-                    <div class="h-60 bg-autumn-200 relative overflow-hidden">
-                        <!-- Placeholder image simulating cabin exterior / rustic room -->
-                        <img src="https://placehold.co/600x450/84694b/f5efe6?text=Asturias+Secreta+-+Salon" alt="Salón de Asturias Secreta" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                        <span class="absolute bottom-3 left-3 px-3 py-1 bg-autumn-950/70 backdrop-blur-md text-white text-xs font-medium rounded-lg">Salón con Chimenea</span>
-                    </div>
-                    <div class="p-5">
-                        <h3 class="font-bold text-autumn-900 text-base mb-1">Estancia Principal</h3>
-                        <p class="text-autumn-600 text-xs leading-relaxed">Paredes de piedra natural, techos de madera y vistas directas hacia los valles de Ponga.</p>
-                    </div>
-                </div>
-
-                <!-- Photo Card 2 -->
-                <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-autumn-200/60 group">
-                    <div class="h-60 bg-autumn-200 relative overflow-hidden">
-                        <!-- Placeholder image simulating jacuzzi -->
-                        <img src="https://placehold.co/600x450/6b533d/f5efe6?text=Jacuzzi+Privado" alt="Jacuzzi privado" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                        <span class="absolute bottom-3 left-3 px-3 py-1 bg-autumn-950/70 backdrop-blur-md text-white text-xs font-medium rounded-lg">Jacuzzi Privado</span>
-                    </div>
-                    <div class="p-5">
-                        <h3 class="font-bold text-autumn-900 text-base mb-1">Zona de Hidromasaje</h3>
-                        <p class="text-autumn-600 text-xs leading-relaxed">Bañera de hidromasaje integrada junto a la zona de estar, pensada para el relax total de tarde.</p>
-                    </div>
-                </div>
-
-                <!-- Photo Card 3 -->
-                <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-autumn-200/60 group">
-                    <div class="h-60 bg-autumn-200 relative overflow-hidden">
-                        <!-- Placeholder image simulating mountain views -->
-                        <img src="https://placehold.co/600x450/574332/f5efe6?text=Vistas+Ponga+-+Otonio" alt="Entorno de Cazo" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                        <span class="absolute bottom-3 left-3 px-3 py-1 bg-autumn-950/70 backdrop-blur-md text-white text-xs font-medium rounded-lg">Entorno Cazo</span>
-                    </div>
-                    <div class="p-5">
-                        <h3 class="font-bold text-autumn-900 text-base mb-1">Paisaje Otoñal</h3>
-                        <p class="text-autumn-600 text-xs leading-relaxed">Ubicación privilegiada en la ladera alta del valle con total privacidad y tranquilidad.</p>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-    </main>
-
-    <!-- Footer -->
-    <footer class="bg-autumn-900 text-autumn-300 mt-20 py-12 border-t border-autumn-800">
-        <div class="max-w-5xl mx-auto px-6 text-center space-y-4">
-            <h4 class="text-white font-bold text-lg">Escapada Asturias Secreta</h4>
-            <p class="text-xs text-autumn-400">Reserva confirmada · 6 al 9 de noviembre de 2026 · Cazo, Ponga</p>
-            <div class="pt-4 border-t border-autumn-800/60 text-xs text-autumn-500">
-                Diseñado para una escapada inolvidable en pareja.
-            </div>
+    <h2 class="section-title">Itinerario del Viaje</h2>
+    <div class="itinerary">
+      <div class="day-card">
+        <div class="day-header">
+          <h3>Viernes 6</h3>
+          <span class="date">Llegada y relax</span>
         </div>
-    </footer>
+        <ul>
+          <li>Viaje de llegada desde Madrid.</li>
+          <li>Llegada a Cazo, toma de contacto con la casa y encendido de la chimenea.</li>
+          <li>Estreno del jacuzzi y cena tranquila de picoteo.</li>
+        </ul>
+      </div>
 
-</body>
-</html>
+      <div class="day-card">
+        <div class="day-header
