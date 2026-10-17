@@ -130,6 +130,8 @@
       box-shadow: var(--shadow);
       transition: transform 0.3s ease;
       cursor: pointer;
+      display: flex;
+      flex-direction: column;
     }
 
     .photo-card:hover {
@@ -141,6 +143,7 @@
       height: 180px;
       object-fit: cover;
       display: block;
+      flex-grow: 1;
     }
 
     .photo-caption {
@@ -150,6 +153,7 @@
       color: var(--text-main);
       text-align: center;
       background-color: var(--card-bg);
+      border-top: 1px solid var(--border);
     }
 
     .itinerary {
@@ -232,7 +236,7 @@
         grid-template-columns: 1fr;
       }
       .photo-card img {
-        height: 200px;
+        height: 220px;
       }
     }
   </style>
@@ -265,37 +269,55 @@
       </div>
     </div>
 
-    <h2 class="section-title">Nuestra Casa</h2>
+    <h2 class="section-title">El Alojamiento</h2>
     <div class="gallery-grid">
-      <!-- Foto 1: Jacuzzi -->
+      
+      <!-- FOTOS DEL EXTERIOR -->
       <div class="photo-card">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5ot-zUZNa2BOFq6SvgrRHz0lMX6rHvgmQm8RN5KzOfbjJEd6wdNJHDfhI&s=10" alt="Jacuzzi de Asturias Secreta">
-        <div class="photo-caption">Jacuzzi con vistas a la montaña</div>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZnX8VEBt6NiEJbVnr-delLBmKU0m3jRzJf57sAfDaFRYBX-jMRwH9zWsw&s=10" alt="Camino y entorno exterior">
+        <div class="photo-caption">Camino empedrado y entorno</div>
       </div>
-      <!-- Foto 2: Cama / Dormitorio Nuevo -->
       <div class="photo-card">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmCfd3u04omjS4bhfgHQ6lheGwHgia7YECB0HkjJSLmQnCW6odECvL7BS0&s=10" alt="Dormitorio abuhardillado">
-        <div class="photo-caption">Dormitorio abuhardillado</div>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtI2A6ExWKwsgPRcvdc5-O6rk-dLm9OLtGUo8PMhvZx46a86D1P4wmMd0&s=10" alt="Fachada exterior de piedra y madera">
+        <div class="photo-caption">Fachada de piedra y madera</div>
       </div>
-      <!-- Foto 3: Chimenea -->
+      <div class="photo-card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJaVTdRjYHCHeU1hWYkLc28Imis_ox2pI02S-8Xe5Lw2BEhcApuNfHoVN0&s=10" alt="Entrada a la casa">
+        <div class="photo-caption">Terraza y entrada principal</div>
+      </div>
+
+      <!-- FOTOS DEL SALÓN / RELAX -->
       <div class="photo-card">
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2LDePbiYHhho8WibixIr0K39CAD7sHH_j2WZ0dkATDpNPeod5JUYi9QSZ&s=10" alt="Salón con chimenea">
         <div class="photo-caption">Salón con chimenea de leña</div>
       </div>
-      <!-- Foto 4: Ventanales y vistas Nuevo -->
-      <div class="photo-card">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmG8lkNS09QU8-9qgoAmBAK1JbQlzezoiAxYFUHcswNnR364nRpCcsGQs&s=10" alt="Ventanales del salón">
-        <div class="photo-caption">Sofá panorámico y vistas</div>
-      </div>
-      <!-- Foto 5: Entrada y terraza exterior Nuevo -->
-      <div class="photo-card">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJaVTdRjYHCHeU1hWYkLc28Imis_ox2pI02S-8Xe5Lw2BEhcApuNfHoVN0&s=10" alt="Entrada y exterior">
-        <div class="photo-caption">Entrada tradicional de piedra</div>
-      </div>
-      <!-- Foto 6: Interior general / Salón -->
       <div class="photo-card">
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYPcawrHC2HKJX1B_NT1tviGmQdUGkyzVfNWvfah32lO5dirkeFzJD5cI&s=10" alt="Interior y salón general">
         <div class="photo-caption">Espacio diáfano y acogedor</div>
+      </div>
+      <div class="photo-card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDfio47Rq1N8wrIwaOfqWJkAioSn9gYPWaF-MoCLmU_oYyDXc68-ssOtQ&s=10" alt="Zona de comedor y sofá">
+        <div class="photo-caption">Mesa y zona de estar</div>
+      </div>
+
+      <!-- FOTOS DEL JACUZZI Y VISTAS -->
+      <div class="photo-card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5ot-zUZNa2BOFq6SvgrRHz0lMX6rHvgmQm8RN5KzOfbjJEd6wdNJHDfhI&s=10" alt="Jacuzzi de Asturias Secreta">
+        <div class="photo-caption">Jacuzzi interior</div>
+      </div>
+      <div class="photo-card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmG8lkNS09QU8-9qgoAmBAK1JbQlzezoiAxYFUHcswNnR364nRpCcsGQs&s=10" alt="Ventanales del salón">
+        <div class="photo-caption">Ventanales y vistas a la montaña</div>
+      </div>
+
+      <!-- FOTOS DE HABITACIÓN Y BAÑO -->
+      <div class="photo-card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmCfd3u04omjS4bhfgHQ6lheGwHgia7YECB0HkjJSLmQnCW6odECvL7BS0&s=10" alt="Dormitorio abuhardillado">
+        <div class="photo-caption">Dormitorio abuhardillado</div>
+      </div>
+      <div class="photo-card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0JjFJYDxoSvtz1ArWEYK6Z4J4MeofFtaZXnAHoaZQwaxn3ptnSQehv1CN&s=10" alt="Baño rústico">
+        <div class="photo-caption">Cuarto de baño completo</div>
       </div>
     </div>
 
